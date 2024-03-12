@@ -1,0 +1,73 @@
+version: '2.4'
+services:
+  spark-master:
+    build:
+        context: /home/ubuntu/project
+        dockerfile: master.Dockerfile
+    hostname: sparkmaster
+    ports:
+        - "7077:7077"
+  spark-worker-1:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker1.Dockerfile
+    ports:
+        - "8001:8001"
+    depends_on:
+        - spark-master
+  spark-worker-2:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker2.Dockerfile
+    ports:
+        - "8002:8002"
+    depends_on:
+        - spark-master
+  spark-worker-3:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker3.Dockerfile
+    ports:
+        - "8003:8003"
+    depends_on:
+        - spark-master
+  spark-worker-4:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker4.Dockerfile
+    ports:
+        - "8004:8004"
+    depends_on:
+        - spark-master
+  spark-worker-5:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker5.Dockerfile
+    ports:
+        - "8005:8005"
+    depends_on:
+        - spark-master
+  spark-worker-6:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker6.Dockerfile
+    ports:
+        - "8006:8006"
+    depends_on:
+        - spark-master
+  spark-worker-7:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker7.Dockerfile
+    ports:
+        - "8007:8007"
+    depends_on:
+        - spark-master
+  spark-worker-8:
+    build:
+        context: /home/ubuntu/project/workersdf
+        dockerfile: worker8.Dockerfile
+    ports:
+        - "8008:8008"
+    depends_on:
+        - spark-master
